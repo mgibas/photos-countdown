@@ -1,4 +1,5 @@
 const { resolve } = require('path')
+const CleanWebpackPlugin = require('clean-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin')
 
@@ -6,7 +7,7 @@ module.exports = {
   entry: './src/index.js',
   output: {
     filename: '[name].[hash].js',
-    path: resolve('./docs')
+    path: resolve('./dist')
   },
   mode: 'production',
   module: {
@@ -28,6 +29,8 @@ module.exports = {
       {
         test: /\.scss$/,
         use: [{
+          loader: 'style-loader'
+        }, {
           loader: 'css-loader',
           options: {
             modules: true,
@@ -40,7 +43,9 @@ module.exports = {
     ]
   },
   plugins: [
+    new CleanWebpackPlugin(['./dist', 'index.html']),
     new HtmlWebpackPlugin({
+      filename: '../index.html',
       template: './src/index.html'
     }),
     new ScriptExtHtmlWebpackPlugin({

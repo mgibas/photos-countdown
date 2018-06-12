@@ -4,22 +4,20 @@ import style from './counter.scss'
   class Counter {
     constructor(el) {
       this.root = el
+      this.root.classList.add(style.counter)
       this.render() 
     }  
     render () {
+      console.log(style)
       let template = ` 
-        <style>${style.toString()}</style>
         <div>
-          <p class="${style.locals.text}">Im Scoped Vanilla</p>
-          <p class="${style.locals.text}" part="text">Im Overridable Vanilla</p>
-        </div>
-        <div class="${style.locals.parent}">
-          <div class="${style.locals.child}" part="child">make me blue</div>
+        hello
         </div>
         `
       this.root.innerHTML = template
     }
   }
-  
+
+  document.querySelectorAll('counter').forEach((el)=> new Counter(el))
 //window.customElements.define('poc-component', PocComponent)
 }())
