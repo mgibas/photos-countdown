@@ -1,5 +1,11 @@
 :global {
 
+.blah {
+  background-color: blue;
+  &-test {
+    color:red;
+  }
+}
   html {
     box-sizing: border-box;
   }
@@ -35,6 +41,9 @@
     transform: rotate(25deg);
     pointer-events: none;
     z-index: -1;
+    @media (max-width: 575.98px) {
+      left: -100%;
+    }
   }
   .left {
     flex: 1;
@@ -46,5 +55,21 @@
     align-items: center;
     justify-content: flex-end;
     text-align: right;
+  }
+  @media (max-width: 575.98px) {
+    h1 {
+      font-size: 32px;
+    }
+    body {
+      flex-direction: column;
+    }
+    body::before {
+    }
+  }
+  @media (max-width: 767.98px) {
+  }
+  @media (max-width: 991.98px) {
+  }
+  @media (max-width: 1199.98px) {
   }
 }

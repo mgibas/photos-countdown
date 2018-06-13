@@ -1,3 +1,242 @@
-.counter {
-  color: red;
+:local {
+  .counter {
+    color: red;
+    display: flex;
+    
+    .display-1 {
+      margin-right: 128px;
+    }
+
+    .display {
+      flex: 1;
+      display: grid;
+      grid-template-columns: [col] 1fr [col] 1fr [col] 1fr [col] 1fr;
+      grid-template-rows: [row] 1fr [row] 1fr [row] 1fr [row] 1fr [row] 1fr [row] 1fr [row] 1fr;
+    }
+    .display {
+      .cell {
+        height: 90px;
+        width: 120px;
+        visibility: hidden;
+        display: flex;
+        align-items: center;
+        justify-items: center;
+        justify-content: center;
+      }
+    }
+    @for $i from 0 through 27 {
+      :global .cell-#{$i} { 
+        background-image: url('/images/cell-#{$i}.jpg')
+      }
+    }
+    .display[digit="0"] {
+      :global {
+        .cell-0,
+        .cell-1,
+        .cell-2,
+        .cell-3,
+        .cell-4,
+        .cell-7,
+        .cell-8,
+        .cell-11,
+        .cell-12,
+        .cell-15,
+        .cell-16,
+        .cell-19,
+        .cell-20,
+        .cell-23,
+        .cell-24,
+        .cell-25,
+        .cell-26,
+        .cell-27 {
+          visibility: visible;
+        }
+      }
+    }
+    .display[digit="1"] {
+      :global {
+        .cell-3,
+        .cell-7,
+        .cell-11,
+        .cell-15,
+        .cell-19,
+        .cell-23,
+        .cell-27 {
+          visibility: visible;
+        }
+      }
+    }
+    .display[digit="2"] {
+      :global {
+        .cell-0,
+        .cell-1,
+        .cell-2,
+        .cell-3,
+        .cell-7,
+        .cell-11,
+        .cell-12,
+        .cell-13,
+        .cell-14,
+        .cell-15,
+        .cell-16,
+        .cell-20,
+        .cell-24,
+        .cell-25,
+        .cell-26,
+        .cell-27 {
+          visibility: visible;
+        }
+      }
+    }
+    .display[digit="3"] {
+      :global {
+        .cell-0,
+        .cell-1,
+        .cell-2,
+        .cell-3,
+        .cell-7,
+        .cell-11,
+        .cell-12,
+        .cell-13,
+        .cell-14,
+        .cell-15,
+        .cell-19,
+        .cell-23,
+        .cell-24,
+        .cell-25,
+        .cell-26,
+        .cell-27 {
+          visibility: visible;
+        }
+      }
+    }
+    .display[digit="4"] {
+      :global {
+        .cell-0,
+        .cell-3,
+        .cell-4,
+        .cell-7,
+        .cell-8,
+        .cell-11,
+        .cell-12,
+        .cell-13,
+        .cell-14,
+        .cell-15,
+        .cell-19,
+        .cell-23,
+        .cell-27 {
+          visibility: visible;
+        }
+      }
+    }
+    .display[digit="5"] {
+      :global {
+        .cell-0,
+        .cell-1,
+        .cell-2,
+        .cell-3,
+        .cell-4,
+        .cell-8,
+        .cell-12,
+        .cell-13,
+        .cell-14,
+        .cell-15,
+        .cell-19,
+        .cell-23,
+        .cell-24,
+        .cell-25,
+        .cell-26,
+        .cell-27 {
+          visibility: visible;
+        }
+      }
+    }
+    .display[digit="6"] {
+      :global {
+        .cell-0,
+        .cell-1,
+        .cell-2,
+        .cell-3,
+        .cell-4,
+        .cell-8,
+        .cell-12,
+        .cell-13,
+        .cell-14,
+        .cell-15,
+        .cell-16,
+        .cell-19,
+        .cell-20,
+        .cell-23,
+        .cell-24,
+        .cell-25,
+        .cell-26,
+        .cell-27 {
+          visibility: visible;
+        }
+      }
+    }
+    .display[digit="7"] {
+      :global {
+        .cell-0,
+        .cell-1,
+        .cell-2,
+        .cell-3,
+        .cell-7,
+        .cell-11,
+        .cell-15,
+        .cell-19,
+        .cell-23,
+        .cell-27 {
+          visibility: visible;
+        }
+      }
+    }
+    .display[digit="8"] {
+      :global {
+        .cell-0,
+        .cell-1,
+        .cell-2,
+        .cell-3,
+        .cell-4,
+        .cell-7,
+        .cell-8,
+        .cell-11,
+        .cell-12,
+        .cell-13,
+        .cell-14,
+        .cell-15,
+        .cell-16,
+        .cell-19,
+        .cell-20,
+        .cell-23,
+        .cell-24,
+        .cell-25,
+        .cell-26,
+        .cell-27 {
+          visibility: visible;
+        }
+      }
+    }
+    .display[digit="9"] {
+      :global {
+        .cell-0,
+        .cell-1,
+        .cell-2,
+        .cell-3,
+        .cell-4,
+        .cell-7,
+        .cell-8,
+        .cell-11,
+        .cell-12,
+        .cell-13,
+        .cell-14,
+        .cell-15,
+        .cell-19,
+        .cell-23,
+        .cell-27 {
+          visibility: visible;
+        }
+      }
+    }
+  }
 }
