@@ -34,6 +34,7 @@ module.exports = {
           loader: 'css-loader',
           options: {
             modules: true,
+            url: false,
             camelCase: true
           }
         }, {

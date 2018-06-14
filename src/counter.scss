@@ -31,7 +31,7 @@
       }
       @for $i from 0 through 27 {
         .cell-#{$i} { 
-          background-image: url('/images/cell-#{$i}.jpg')
+          background-image: url('images/cell-#{$i}.jpg')
         }
       }
     }
